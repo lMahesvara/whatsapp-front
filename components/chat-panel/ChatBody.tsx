@@ -6,10 +6,13 @@ import { Message } from '@/types/Message'
 
 type ChatBodyProps = {
   messages?: Message[]
+  id: string
 }
 
-const ChatBody = ({ messages }: ChatBodyProps) => {
+const ChatBody = ({ messages, id }: ChatBodyProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
+
+  console.log(messages)
 
   useEffect(() => {
     const container = containerRef.current
@@ -27,7 +30,7 @@ const ChatBody = ({ messages }: ChatBodyProps) => {
       <div className='flex-1 min-h-[12px] '></div>
 
       {messages?.map((message, index) => {
-        return message.sender === 'me' ? (
+        return message.sender === id ? (
           <MessageItem key={index} message={message} lastMessage />
         ) : (
           <ResMessageItem key={index} message={message} lastMessage />
