@@ -1,7 +1,7 @@
 export interface Message {
-  id?: string
+  _id?: string
   text: string
   createdAt: Date
   sender?: string
-  conversationId?: string
+  chatId?: string
 }
