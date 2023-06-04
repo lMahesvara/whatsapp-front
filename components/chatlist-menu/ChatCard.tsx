@@ -1,5 +1,5 @@
 import useUser from '@/hooks/useUser'
-import { getUser } from '@/services/api-chats'
+import { getUser } from '@/services/api'
 import useSWR from 'swr'
 
 type ChatCardProps = {

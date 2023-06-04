@@ -5,7 +5,7 @@ import ChatBody from './ChatBody'
 import ChatFooter from './footer/ChatFooter'
 import { Socket, io } from 'socket.io-client'
 import useSWR from 'swr'
-import { getChat, postMessage } from '@/services/api-chats'
+import { getChat, postMessage } from '@/services/api'
 import { Message } from '@/types/Message'
 
 type ChatPanelProps = {
