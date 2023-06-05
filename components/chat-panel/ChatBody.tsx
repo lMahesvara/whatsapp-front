@@ -30,10 +30,27 @@ const ChatBody = ({ messages, id }: ChatBodyProps) => {
       <div className='flex-1 min-h-[12px] '></div>
 
       {messages?.map((message, index) => {
+        const prevMessage = messages[index - 1]
+        const nextMessage = messages[index + 1]
+
+        const firstMessage =
+          !prevMessage || prevMessage.sender !== message.sender
+        const lastMessage =
+          !nextMessage || nextMessage.sender !== message.sender
         return message.sender === id ? (
-          <MessageItem key={index} message={message} lastMessage />
+          <MessageItem
+            key={index}
+            message={message}
+            firstMessage={firstMessage}
+            lastMessage={lastMessage}
+          />
         ) : (
-          <ResMessageItem key={index} message={message} lastMessage />
+          <ResMessageItem
+            key={index}
+            message={message}
+            firstMessage={firstMessage}
+            lastMessage={lastMessage}
+          />
         )
       })}
     </section>

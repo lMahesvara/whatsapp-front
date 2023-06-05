@@ -2,15 +2,18 @@ type MessageLayoutProps = {
   marginBottom?: string
   bgColor?: string
   children: React.ReactNode
+  firstMessage?: boolean
 }
 
 const MessageLayout = ({
   marginBottom,
   bgColor = 'bg-[#005c4b]',
   children,
+  firstMessage,
 }: MessageLayoutProps) => {
   const styles =
-    bgColor === 'bg-[#005c4b]' ? `rounded-tr-none ` : `rounded-tl-none `
+    firstMessage &&
+    (bgColor === 'bg-[#005c4b]' ? `rounded-tr-none ` : `rounded-tl-none `)
   const itemsAlign = bgColor === 'bg-[#005c4b]' ? 'items-end' : 'items-start'
   return (
     <article
