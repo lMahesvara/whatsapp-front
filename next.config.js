@@ -4,6 +4,7 @@ const nextConfig = {
     appDir: true,
     serverComponentsExternalPackages: ['mongoose'],
   },
+  reactStrictMode: false,
 }
 
 module.exports = nextConfig

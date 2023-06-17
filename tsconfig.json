@@ -30,7 +30,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "pages/api/socket.ts"
+    "pages/api/socket.ts",
+    "app/api/auth/[...nextauth]/route.ts",
+    "lib/mongodb.ts"
   ],
   "exclude": ["node_modules"]
 }
