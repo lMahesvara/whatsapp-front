@@ -13,7 +13,10 @@ type ChatFooterProps = {
 const ChatFooter = ({ handleSend }: ChatFooterProps) => {
   const [message, setMessage] = useState('')
 
-  const handleSubmit = (message: string) => {
+  const handleSubmit = () => {
+    console.log('enters')
+    if (!message) return
+
     handleSend(message)
     setMessage('')
   }
@@ -49,15 +52,15 @@ const ChatFooter = ({ handleSend }: ChatFooterProps) => {
                 onChange={e => setMessage(e.target.value)}
                 value={message}
                 className='py-[9px] px-3 my-[5px] mx-2 bg-[#2a3942] border border-[#2a3942] rounded-lg flex-1 min-h-[20x] text-[15px] font-normal leading-5 flex w-full h-full outline-none text-[#d1d7d8]'
+                onKeyDown={e => {
+                  if (e.key === 'Enter') handleSubmit()
+                }}
               />
               {/* micro */}
               <div className='py-[5px] flex items-center justify-center min-h-[52px] text-[#8696a0] w-10 min-w-[40px]'>
                 <button
                   className='flex items-center justify-center w-10 h-10 border-0 cursor-pointer bg-none '
-                  onClick={() => {
-                    handleSend(message)
-                    setMessage('')
-                  }}
+                  onClick={handleSubmit}
                 >
                   <div className='m-[1px]'>
                     {message ? <Send /> : <Micro />}
