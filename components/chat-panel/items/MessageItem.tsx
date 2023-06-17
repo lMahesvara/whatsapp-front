@@ -2,11 +2,11 @@ import TailOut from '@/components/svg/TailOut'
 import React from 'react'
 import Check from './check/Check'
 import MessageLayout from './MessageLayout'
-import { Message } from '@/types/Message'
+import { IMessage } from '@/types/Message'
 import { getTimeFormat } from '@/utils/timeFormat'
 
 type MessageItemProps = {
-  message?: Message
+  message?: IMessage
   lastMessage?: boolean
   firstMessage?: boolean
 }

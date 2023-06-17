@@ -1,11 +1,11 @@
 import TailIn from '@/components/svg/TailIn'
 import React from 'react'
 import MessageLayout from './MessageLayout'
-import { Message } from '@/types/Message'
+import { IMessage } from '@/types/Message'
 import { getTimeFormat } from '@/utils/timeFormat'
 
 type ResMessageItemProps = {
-  message?: Message
+  message?: IMessage
   lastMessage?: boolean
   firstMessage?: boolean
 }
