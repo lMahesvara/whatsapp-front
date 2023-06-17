@@ -6,6 +6,14 @@ const ChatSchema = new mongoose.Schema(
       type: Array,
       required: [true, 'Please provide members'],
     },
+    unread: {
+      type: Array,
+      default: [],
+    },
+    lastMessage: {
+      type: Object,
+      default: null,
+    },
   },
   { timestamps: true }
 )
