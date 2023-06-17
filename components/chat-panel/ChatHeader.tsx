@@ -17,7 +17,7 @@ const ChatHeader = ({ id }: ChatHeaderProps) => {
         <div className='relative w-10 h-10 rounded-full'>
           <img
             className='w-full h-full rounded-full'
-            src='https://picsum.photos/200/300'
+            src={user?.image ?? 'https://picsum.photos/200/300'}
             alt='profile'
           />
         </div>
