@@ -1,5 +1,4 @@
-'use client'
-import { SessionProvider } from 'next-auth/react'
+import SessionProviderLayout from '@/components/session/SessionProviderLayout'
 import './globals.css'
 
 export const metadata = {
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <SessionProvider basePath='api/auth'>{children}</SessionProvider>
+        <SessionProviderLayout>{children}</SessionProviderLayout>
       </body>
     </html>
   )
