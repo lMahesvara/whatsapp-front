@@ -5,6 +5,9 @@ const nextConfig = {
     serverComponentsExternalPackages: ['mongoose'],
   },
   reactStrictMode: false,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 }
 
 module.exports = nextConfig

@@ -11,16 +11,12 @@ export async function GET(
 ) {
   await dbConnect()
   const { firstId, secId } = params
-  //check if that users exist
 
   const firstUser = await User.findById(firstId)
   const secUser = await User.findById(secId)
   if (!firstUser || !secUser) {
     return NextResponse.json({ error: 'User not found' })
   }
-  //check if chat exist
-
-  //both users are members of that chat
   const chat = await Chat.findOne({
     members: { $all: [firstId, secId] },
   })

@@ -17,7 +17,6 @@ export async function GET(
     if (!firstUser) {
       return NextResponse.json({ error: 'User not found' })
     }
-    //get all chats where firstId is a member and add an extra field called "lastMessage" with the most recent message
 
     const chats = (await Chat.find({
       members: { $all: [firstId] },
