@@ -1,12 +1,25 @@
 'use client'
+import LoginSkeleton from '@/components/skeletons/LoginSkeleton'
 import Github from '@/components/svg/Github'
 import Google from '@/components/svg/Google'
 import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const { data, status } = useSession()
+  const router = useRouter()
 
-  console.log(data?.user, status)
+  if (status === 'loading') {
+    return (
+      <div className='flex justify-center h-screen py-20 '>
+        <LoginSkeleton />
+      </div>
+    )
+  }
+  if (status === 'authenticated') {
+    return router.push('/chats')
+  }
+
   return (
     <main>
       <div className='relative py-16 bg-transparent'>
