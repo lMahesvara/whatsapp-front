@@ -1,4 +1,5 @@
 import { User } from '@/types/User'
+import { signOut } from 'next-auth/react'
 import React from 'react'
 
 const ChatlistHeader = ({ user }: { user: User }) => {
@@ -13,6 +14,12 @@ const ChatlistHeader = ({ user }: { user: User }) => {
           />
         </div>
       </div>
+      <button
+        className='text-lg text-white hover:text-[#34d3b0] transition duration-300 ease-in-out cursor-pointer'
+        onClick={() => signOut()}
+      >
+        Log out
+      </button>
     </header>
   )
 }
